@@ -11,8 +11,9 @@ autoinstall:
     - name: steam
       classic: false
   packages:
-    - vim
+    - gimp
   late-commands:
     - curtin in-target -- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - curtin in-target -- apt update
-    - curtin in-target -- apt install -y google-chrome-stable
+    - curtin in-target -- dpkg -i google-chrome-stable_current_amd64.deb
+    - curtin in-target -- wget https://aaronprisk.com/img/corvos-wallpaper.png
+    - curtin in-target -- mv corvos-wallpaper.png /usr/share/xfce4/backdrops/xubuntu-noble.png
