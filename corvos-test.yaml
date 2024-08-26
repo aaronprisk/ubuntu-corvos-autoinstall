@@ -1,0 +1,18 @@
+autoinstall:
+  version: 1
+  identity:
+    hostname: corvos-test
+    username: tech
+    password: "$6$ISB3LGleDrcpMiVI$XWnpP7q9.cz9FOy6EylV/w7Wr6a6YoT2C4vOiA1n93hXzNIcY9WOIYqbg1OzraZCxNO1MB6dDlEAnBIpi332a/"
+  storage:
+    layout:
+      name: direct
+  snaps:
+    - name: steam
+      classic: false
+  packages:
+    - vim
+  late-commands:
+    - curtin in-target -- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - curtin in-target -- apt update
+    - curtin in-target -- apt install -y google-chrome-stable
